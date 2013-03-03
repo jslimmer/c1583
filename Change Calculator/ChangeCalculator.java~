@@ -1,0 +1,59 @@
+// Jazonda Wesley
+// February 6, 2013
+// CSCI 1583-601
+// Assignment 3
+
+class ChangeCalculator{
+  private int changeValue;
+  private int numQuarters;
+  private int numDimes;
+  private int numNickels;
+  private int numPennies;
+  private int numCents;
+  
+  // Constructor
+  public ChangeCalculator(int value){
+    this.changeValue = value;
+    this.numQuarters = -1;
+    this.numDimes = -1;
+    this.numNickels = -1;
+    this.numPennies = -1;
+    this.numCents = 0;
+  }
+  
+  // Queries to retrieve instance variable values
+  public int getNumQuarters(){
+    return this.numQuarters;
+  }
+  
+  public int getNumDimes(){
+    return this.numDimes;
+  }
+  
+  public int getNumNickels(){
+    return this.numNickels;
+  }
+  
+  public int getNumPennies(){
+    return this.numPennies;
+  }
+  
+  public void calculateChange(){
+    /*while ( <= 25 )*/
+    /*while ( <= 10 )*/
+    
+    this.numQuarters = (this.changeValue / 25);
+    this.numCents = this.changeValue %= 25;
+    this.numDimes = (this.numCents / 10);
+    this.numCents = this.numCents %= 10;
+    this.numNickels = (this.changeValue / 5);
+    this.numCents = this.numCents %= 5;
+    this.numPennies = (this.changeValue / 1);
+    this.numCents = this.numCents %= 1;
+    
+    System.out.println("Number of quarters:" + this.numQuarters);
+    System.out.println("Number of dimes:" + this.numDimes);
+    System.out.println("Number of nickels:" + this.numNickels);
+    System.out.println("Number of pennies:" + this.numPennies);
+  }
+}
